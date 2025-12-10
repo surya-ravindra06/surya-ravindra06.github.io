@@ -10,14 +10,13 @@
   />
   <style>
     :root {
-      --bg: #f4f4f5;
+      --bg: #f9fafb;
       --bg-alt: #ffffff;
-      --text: #111827;
-      --muted: #4b5563;
-      --border: #e5e7eb;
+      --text: #0f172a;
+      --muted: #6b7280;
       --accent: #0f766e;
-      --accent-soft: #ecfdf5;
-      --radius: 12px;
+      --border: #e5e7eb;
+      --radius: 10px;
     }
 
     * {
@@ -31,7 +30,7 @@
         "Segoe UI", sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -45,97 +44,113 @@
     }
 
     .page {
-      max-width: 900px;
+      max-width: 860px;
       margin: 0 auto;
-      padding: 24px 16px 56px;
+      padding: 24px 18px 40px;
     }
 
     header {
-      margin-bottom: 28px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 16px;
+      margin-bottom: 24px;
     }
 
     .top-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      align-items: baseline;
-      gap: 8px;
+      align-items: flex-end;
+      gap: 10px;
     }
 
     .name {
-      font-size: 1.6rem;
-      font-weight: 650;
+      font-size: 1.9rem;
+      font-weight: 680;
+      letter-spacing: -0.02em;
     }
 
     .tagline {
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       color: var(--muted);
+      max-width: 620px;
+      margin-top: 4px;
     }
 
     nav {
-      margin-top: 10px;
+      margin-top: 18px;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
     }
 
     nav ul {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
       list-style: none;
       font-size: 0.85rem;
     }
 
     nav a {
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid transparent;
+      padding: 4px 0;
       color: var(--muted);
     }
 
     nav a:hover {
-      border-color: var(--border);
-      background: #f9fafb;
-      color: var(--text);
+      color: var(--accent);
     }
 
     main section {
       margin-top: 28px;
+      padding-top: 6px;
+      border-top: 1px solid var(--border);
     }
 
     .section-title {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.16em;
       color: var(--muted);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
-    .card {
+    .section-body {
+      font-size: 0.95rem;
+    }
+
+    .block {
       background: var(--bg-alt);
       border-radius: var(--radius);
       border: 1px solid var(--border);
-      padding: 14px 16px 14px;
-      font-size: 0.92rem;
+      padding: 14px 14px 12px;
     }
 
-    .card + .card {
+    .block + .block {
       margin-top: 10px;
     }
 
+    p + p {
+      margin-top: 6px;
+    }
+
     .highlight {
-      background: var(--accent-soft);
       border-left: 3px solid var(--accent);
-      padding: 10px 12px;
-      border-radius: var(--radius);
+      padding-left: 10px;
+      font-size: 0.92rem;
       margin-bottom: 10px;
-      font-size: 0.9rem;
+    }
+
+    ul {
+      padding-left: 18px;
+      margin-top: 4px;
+      font-size: 0.94rem;
+    }
+
+    li + li {
+      margin-top: 4px;
     }
 
     .pill-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
       margin-top: 10px;
     }
 
@@ -161,40 +176,39 @@
     }
 
     .item-meta {
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--muted);
-    }
-
-    ul {
-      padding-left: 18px;
-      margin-top: 4px;
-    }
-
-    li + li {
-      margin-top: 4px;
     }
 
     .two-col {
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 14px;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 12px;
     }
 
     .contact-list span {
       display: block;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
     }
 
     footer {
-      margin-top: 32px;
-      border-top: 1px solid var(--border);
+      margin-top: 30px;
       padding-top: 12px;
+      border-top: 1px solid var(--border);
       font-size: 0.8rem;
       color: var(--muted);
       text-align: center;
     }
 
     @media (max-width: 720px) {
+      .page {
+        padding: 20px 14px 32px;
+      }
+
+      .name {
+        font-size: 1.6rem;
+      }
+
       .two-col {
         grid-template-columns: minmax(0, 1fr);
       }
@@ -230,12 +244,12 @@
       <!-- ABOUT -->
       <section id="about">
         <h2 class="section-title">About</h2>
-        <div class="card">
+        <div class="section-body block">
           <p>
             I work on building reliable AI systems that can reason under constraints, respect privacy and operate in real deployments. My recent work explores
             <strong>RL guided alignment</strong>, <strong>LLM unlearning and privacy</strong>, <strong>clinical NLP under tight resource limits</strong> and <strong>multimodal forecasting</strong>.
           </p>
-          <p style="margin-top:6px;">
+          <p>
             I completed my <strong>B.Tech in Electronics and Communication Engineering</strong> at <strong>IIIT Hyderabad</strong> (CGPA 8.29 out of 10, ML CGPA 9.14 out of 10). I have since worked with <strong>TCS Research</strong>, <strong>PayPal Research</strong>, <strong>Microsoft Research India</strong> and collaborators at <strong>UCSB</strong> and <strong>UCSC</strong>. A common theme in my work is using post training methods, constrained objectives and careful evaluation to move models from fluent text generation toward consistent, verifiable reasoning.
           </p>
         </div>
@@ -244,14 +258,14 @@
       <!-- RESEARCH FOCUS -->
       <section id="focus">
         <h2 class="section-title">Research Focus</h2>
-        <div class="card">
+        <div class="section-body block">
           <div class="highlight">
             I am interested in how RL style optimization, structured feedback and learning science can guide large language models toward stable reasoning behaviors instead of only optimizing for surface level fluency.
           </div>
           <p>
             The limitations of current LLMs became clear to me while working with noisy fraud investigation notes at PayPal and anonymized data for unlearning at TCS Research. In both settings, fluent answers were not enough. The systems had to respect constraints around privacy, consistency and safety, and their behavior had to be measurable and improvable over time.
           </p>
-          <p style="margin-top:6px;">
+          <p>
             I now focus on questions such as:
           </p>
           <ul>
@@ -272,7 +286,8 @@
       <!-- EXPERIENCE -->
       <section id="experience">
         <h2 class="section-title">Experience</h2>
-        <div class="card">
+
+        <div class="section-body block">
           <div class="item-header">
             <div class="item-title">ML Research Scientist Intern - Fraud Analytics</div>
             <div class="item-meta">PayPal Research, Bangalore · May 2024 - Aug 2024</div>
@@ -290,7 +305,7 @@
           </ul>
         </div>
 
-        <div class="card">
+        <div class="section-body block">
           <div class="item-header">
             <div class="item-title">Research Intern - Privacy and LLM Unlearning</div>
             <div class="item-meta">TCS Research, Hyderabad · 2025</div>
@@ -308,7 +323,7 @@
           </ul>
         </div>
 
-        <div class="card">
+        <div class="section-body block">
           <div class="item-header">
             <div class="item-title">Research Intern - Clinical NLP and Small LMs</div>
             <div class="item-meta">DataUnite, UCSB & UCSC · 2025 - present</div>
@@ -326,7 +341,7 @@
           </ul>
         </div>
 
-        <div class="card">
+        <div class="section-body block">
           <div class="item-header">
             <div class="item-title">Undergraduate Researcher - SPIRIT Project</div>
             <div class="item-meta">PreCog Lab, IIIT Hyderabad & MSR Energy · 2023 - 2025</div>
@@ -344,7 +359,7 @@
           </ul>
         </div>
 
-        <div class="card">
+        <div class="section-body block">
           <div class="item-header">
             <div class="item-title">Project Intern - SustainMeter</div>
             <div class="item-meta">IIIT Hyderabad · 2022 - 2023</div>
@@ -363,7 +378,7 @@
       <!-- RESEARCH -->
       <section id="research">
         <h2 class="section-title">Research</h2>
-        <div class="card">
+        <div class="section-body block">
           <div class="item-header">
             <div class="item-title">SPIRIT - Short term Prediction of solar IRradIance for zero shot Transfer using foundation models</div>
             <div class="item-meta">First author · AAAI 2026 (AI4ES Oral)</div>
@@ -378,7 +393,7 @@
           </ul>
         </div>
 
-        <div class="card">
+        <div class="section-body block">
           <p>
             My ongoing research interests sit at the intersection of <strong>RL guided alignment</strong>, <strong>LLM unlearning and safety</strong>, <strong>compact clinical reasoning models</strong> and <strong>learning centric AI systems</strong>. I am especially interested in how ideas from evidence based educational design can help structure model feedback, curricula and evaluation when AI systems are used to support human learning.
           </p>
@@ -388,8 +403,8 @@
       <!-- PROJECTS -->
       <section id="projects">
         <h2 class="section-title">Selected Projects</h2>
-        <div class="two-col">
-          <div class="card">
+        <div class="section-body two-col">
+          <div class="block">
             <div class="item-header">
               <div class="item-title">Wiki Search Engine</div>
               <div class="item-meta">Information retrieval · systems</div>
@@ -404,7 +419,7 @@
             </ul>
           </div>
 
-          <div class="card">
+          <div class="block">
             <div class="item-header">
               <div class="item-title">No Strings Attached - Debiasing knowledge graph embeddings</div>
               <div class="item-meta">Fairness · KGE</div>
@@ -424,8 +439,8 @@
       <!-- TEACHING & SERVICE -->
       <section id="teaching">
         <h2 class="section-title">Teaching & Service</h2>
-        <div class="two-col">
-          <div class="card">
+        <div class="section-body two-col">
+          <div class="block">
             <div class="item-header">
               <div class="item-title">Teaching Assistant - Machine Learning</div>
               <div class="item-meta">IIIT Hyderabad</div>
@@ -440,7 +455,7 @@
             </ul>
           </div>
 
-          <div class="card">
+          <div class="block">
             <div class="item-header">
               <div class="item-title">Student roles and community work</div>
             </div>
@@ -462,7 +477,7 @@
       <!-- ACHIEVEMENTS -->
       <section id="achievements">
         <h2 class="section-title">Achievements</h2>
-        <div class="card">
+        <div class="section-body block">
           <ul>
             <li>
               <strong>JEE Main</strong>: 99.9 percentile score, leading to admission at IIIT Hyderabad, one of India's most selective research institutes.
@@ -483,10 +498,9 @@
       <!-- CONTACT -->
       <section id="contact">
         <h2 class="section-title">Contact</h2>
-        <div class="card contact-list">
+        <div class="section-body block contact-list">
           <span><strong>Email:</strong> <a href="mailto:suryaravindra01@gmail.com">suryaravindra01@gmail.com</a></span>
           <span><strong>GitHub:</strong> <a href="https://github.com/surya-ravindra06" target="_blank">github.com/surya-ravindra06</a></span>
-          <!-- Replace the LinkedIn URL with your real profile -->
           <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ravindra-telidevara/" target="_blank">linkedin.com/in/your-linkedin</a></span>
         </div>
       </section>
@@ -502,3 +516,4 @@
   </script>
 </body>
 </html>
+
