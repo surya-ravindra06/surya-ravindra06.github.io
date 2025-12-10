@@ -2,25 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>T Ravindra | Machine Learning Engineer</title>
+  <title>Ravindra Telidevara | ML, RL & Learning Sciences</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Portfolio of T Ravindra - Machine Learning Engineer & Applied AI Researcher"
+    content="Portfolio of Ravindra Telidevara - Machine Learning researcher focusing on RL guided alignment, LLM reasoning and learning technologies."
   />
   <style>
     :root {
-      --bg: #050816;
-      --bg-alt: #0b1020;
-      --card: #10162a;
-      --accent: #7dd3fc;
-      --accent-soft: rgba(125, 211, 252, 0.1);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #1f2937;
-      --radius-xl: 18px;
-      --radius-2xl: 24px;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.55);
+      --bg: #f4f4f5;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --border: #e5e7eb;
+      --accent: #0f766e;
+      --accent-soft: #ecfdf5;
+      --radius: 12px;
     }
 
     * {
@@ -32,7 +29,7 @@
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
         "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -47,920 +44,460 @@
       text-decoration: underline;
     }
 
-    /* Layout */
     .page {
-      max-width: 1120px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 20px 16px 64px;
+      padding: 24px 16px 56px;
     }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      backdrop-filter: blur(14px);
-      background: linear-gradient(
-        to bottom,
-        rgba(2, 6, 23, 0.9),
-        rgba(2, 6, 23, 0.5),
-        transparent
-      );
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
     }
 
-    .nav-wrap {
-      max-width: 1120px;
-      margin: 0 auto;
+    .top-row {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
       justify-content: space-between;
-      padding: 12px 16px 10px;
-      border-bottom: 1px solid rgba(55, 65, 81, 0.45);
+      align-items: baseline;
+      gap: 8px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .name {
+      font-size: 1.6rem;
+      font-weight: 650;
     }
 
-    .brand-mark {
-      width: 30px;
-      height: 30px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #7dd3fc, #4f46e5);
-      box-shadow: 0 0 30px rgba(56, 189, 248, 0.65);
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-    }
-
-    .brand-text span:first-child {
-      font-weight: 600;
-      font-size: 15px;
-      letter-spacing: 0.04em;
-    }
-
-    .brand-text span:last-child {
-      font-size: 12px;
+    .tagline {
+      font-size: 0.95rem;
       color: var(--muted);
+    }
+
+    nav {
+      margin-top: 10px;
     }
 
     nav ul {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 10px;
       list-style: none;
-      font-size: 13px;
+      font-size: 0.85rem;
     }
 
     nav a {
-      padding: 6px 10px;
+      padding: 4px 9px;
       border-radius: 999px;
       border: 1px solid transparent;
-      text-decoration: none;
       color: var(--muted);
     }
 
     nav a:hover {
-      border-color: rgba(148, 163, 184, 0.5);
+      border-color: var(--border);
+      background: #f9fafb;
       color: var(--text);
-      background: rgba(15, 23, 42, 0.8);
     }
 
-    /* Hero */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
-      gap: 32px;
-      align-items: center;
-      padding: 40px 0 30px;
-    }
-
-    .hero-left h1 {
-      font-size: clamp(2.1rem, 4vw, 2.8rem);
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .hero-tagline {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .hero-punch {
-      font-size: 0.98rem;
-      max-width: 550px;
-      color: #e5e7eb;
-      margin-bottom: 22px;
-    }
-
-    .hero-punch strong {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 22px;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .chip {
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.8);
-    }
-
-    .hero-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .btn-primary,
-    .btn-ghost {
-      font-size: 0.85rem;
-      padding: 8px 16px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: linear-gradient(to right, #38bdf8, #4f46e5);
-      color: #0b1120;
-      font-weight: 600;
-      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.35);
-    }
-
-    .btn-primary:hover {
-      filter: brightness(1.05);
-      text-decoration: none;
-    }
-
-    .btn-ghost {
-      border-color: rgba(148, 163, 184, 0.5);
-      color: var(--text);
-      background: rgba(15, 23, 42, 0.9);
-    }
-
-    .btn-ghost:hover {
-      background: rgba(15, 23, 42, 1);
-      border-color: rgba(148, 163, 184, 0.9);
-      text-decoration: none;
-    }
-
-    .hero-right {
-      justify-self: center;
-    }
-
-    .hero-card {
-      width: 100%;
-      max-width: 360px;
-      padding: 18px 18px 16px;
-      border-radius: var(--radius-2xl);
-      background: radial-gradient(circle at top, #0f172a, #020617 55%, #000);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: -80px;
-      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.18), transparent 60%);
-      opacity: 0.9;
-      pointer-events: none;
-    }
-
-    .hero-card-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-title {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .hero-sub {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .hero-pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .pill {
-      font-size: 0.75rem;
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.96);
-      white-space: nowrap;
-    }
-
-    .hero-card-footer {
-      margin-top: 10px;
-      font-size: 0.78rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .hero-badge {
-      font-size: 0.7rem;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: rgba(8, 47, 73, 0.9);
-      border: 1px solid rgba(56, 189, 248, 0.7);
-      color: #e0f2fe;
-    }
-
-    /* Sections */
-    section {
-      margin-top: 36px;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
+    main section {
+      margin-top: 28px;
     }
 
     .section-title {
-      font-size: 1.05rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
+      font-size: 0.95rem;
       text-transform: uppercase;
-      color: #d1d5db;
-    }
-
-    .section-subtitle {
-      font-size: 0.8rem;
+      letter-spacing: 0.12em;
       color: var(--muted);
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
-      gap: 18px;
-    }
-
-    .card {
-      padding: 16px 16px 14px;
-      border-radius: var(--radius-xl);
-      background: rgba(15, 23, 42, 0.94);
-      border: 1px solid rgba(55, 65, 81, 0.8);
-      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.8);
-    }
-
-    .card-header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 8px;
       margin-bottom: 8px;
     }
 
-    .card-title {
-      font-size: 0.96rem;
-      font-weight: 600;
+    .card {
+      background: var(--bg-alt);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 14px 16px 14px;
+      font-size: 0.92rem;
     }
 
-    .card-meta {
-      font-size: 0.8rem;
-      color: var(--muted);
+    .card + .card {
+      margin-top: 10px;
     }
 
-    .card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      font-size: 0.74rem;
-      margin: 6px 0 10px;
-    }
-
-    .tag {
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(75, 85, 99, 0.9);
-      color: var(--muted);
-    }
-
-    .card ul {
-      padding-left: 18px;
-      font-size: 0.86rem;
-      color: #e5e7eb;
-    }
-
-    .card li + li {
-      margin-top: 4px;
-    }
-
-    /* Timeline-style list */
-    .timeline {
-      border-left: 1px solid rgba(55, 65, 81, 0.9);
-      padding-left: 14px;
-      margin-left: 4px;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 6px;
-      margin-bottom: 14px;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -14px;
-      top: 5px;
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: #38bdf8;
-      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
-    }
-
-    .timeline-title {
+    .highlight {
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      padding: 10px 12px;
+      border-radius: var(--radius);
+      margin-bottom: 10px;
       font-size: 0.9rem;
-      font-weight: 600;
     }
 
-    .timeline-meta {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 3px;
-    }
-
-    .timeline-desc {
-      font-size: 0.84rem;
-      color: #e5e7eb;
-    }
-
-    /* Two-column lists */
-    .pill-list {
+    .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      font-size: 0.8rem;
+      margin-top: 10px;
     }
 
-    .pill-soft {
-      padding: 4px 9px;
+    .pill {
+      font-size: 0.78rem;
+      padding: 3px 8px;
       border-radius: 999px;
-      border: 1px solid rgba(75, 85, 99, 0.9);
-      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border);
+      background: #f9fafb;
       color: var(--muted);
     }
 
-    /* Contact */
-    .contact-card {
+    .item-header {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
       justify-content: space-between;
-      font-size: 0.86rem;
+      gap: 6px;
+      margin-bottom: 2px;
     }
 
-    .contact-details {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+    .item-title {
+      font-weight: 600;
     }
 
-    .contact-details span {
+    .item-meta {
+      font-size: 0.82rem;
       color: var(--muted);
     }
 
-    .contact-details strong {
-      color: var(--text);
-      font-weight: 500;
+    ul {
+      padding-left: 18px;
+      margin-top: 4px;
+    }
+
+    li + li {
+      margin-top: 4px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 14px;
+    }
+
+    .contact-list span {
+      display: block;
+      font-size: 0.9rem;
     }
 
     footer {
-      margin-top: 40px;
-      font-size: 0.78rem;
+      margin-top: 32px;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+      font-size: 0.8rem;
       color: var(--muted);
       text-align: center;
-      padding-top: 16px;
-      border-top: 1px solid rgba(55, 65, 81, 0.8);
     }
 
-    @media (max-width: 880px) {
-      .hero {
+    @media (max-width: 720px) {
+      .two-col {
         grid-template-columns: minmax(0, 1fr);
-      }
-      .hero-right {
-        order: -1;
-      }
-      .grid-2 {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav-wrap {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-      nav ul {
-        justify-content: flex-start;
-      }
-      .hero {
-        padding-top: 26px;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="nav-wrap">
-      <div class="brand">
-        <div class="brand-mark"></div>
-        <div class="brand-text">
-          <span>T Ravindra</span>
-          <span>Machine Learning Engineer</span>
+  <div class="page">
+    <header>
+      <div class="top-row">
+        <div>
+          <div class="name">Ravindra Telidevara</div>
+          <div class="tagline">
+            Machine Learning researcher focusing on RL guided alignment, LLM reasoning and learning technologies
+          </div>
         </div>
       </div>
       <nav>
         <ul>
           <li><a href="#about">About</a></li>
+          <li><a href="#focus">Research Focus</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#research">Research</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#leadership">Leadership</a></li>
-          <li><a href="#education">Education</a></li>
+          <li><a href="#teaching">Teaching & Service</a></li>
+          <li><a href="#achievements">Achievements</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <main class="page">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-left">
-        <h1>Building AI systems that actually ship.</h1>
-        <p class="hero-tagline">
-          Machine Learning Engineer • Applied Research • Human-Centric AI Systems
-        </p>
-        <p class="hero-punch">
-          I work on <strong>fraud detection</strong>, <strong>solar forecasting</strong>,
-          <strong>clinical NLP</strong>, and <strong>fair, privacy-aware AI</strong> —
-          focusing on models that survive noisy real-world data, latency constraints,
-          and deployment realities.
-        </p>
-
-        <div class="hero-meta">
-          <span class="chip">ML @ PayPal Research</span>
-          <span class="chip">B.Tech, IIIT Hyderabad</span>
-          <span class="chip">ML CGPA 9.14 / 10</span>
-        </div>
-
-        <div class="hero-links">
-          <a href="#experience" class="btn-primary">View Experience ↓</a>
-          <!-- TODO: put your real links below -->
-          <a href="https://github.com/your-github" target="_blank" class="btn-ghost">
-            GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="btn-ghost">
-            LinkedIn
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="hero-card">
-          <div class="hero-card-inner">
-            <div class="hero-title">Current Focus</div>
-            <div class="hero-sub">Deployed ML • Fraud • Foundation Models</div>
-            <div class="hero-pill-row">
-              <span class="pill">LLM-driven workflows</span>
-              <span class="pill">Fraud analytics</span>
-              <span class="pill">Multimodal forecasting</span>
-              <span class="pill">Debiasing & unlearning</span>
-              <span class="pill">Clinical small LMs</span>
-            </div>
-            <div class="hero-card-footer">
-              <span>Always looking for hard, real-world ML problems.</span>
-              <span class="hero-badge">Open to collaboration</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="section-header">
+    <main>
+      <!-- ABOUT -->
+      <section id="about">
         <h2 class="section-title">About</h2>
-      </div>
-      <div class="card">
-        <p style="font-size: 0.9rem; color: #e5e7eb;">
-          I’m a Machine Learning Engineer and researcher interested in building AI systems
-          that move beyond benchmarks into real deployments. My work spans
-          <strong>credit fraud detection</strong>, <strong>solar irradiance forecasting</strong>,
-          <strong>clinical NLP</strong>, and <strong>debiasing knowledge graph embeddings</strong>,
-          with a consistent focus on evaluation, interpretability, and product impact.
-        </p>
-        <p style="font-size: 0.9rem; color: #e5e7eb; margin-top: 8px;">
-          I completed my <strong>B.Tech in Electronics and Communication Engineering</strong>
-          from <strong>IIIT Hyderabad</strong> (CGPA 8.29 / 10, ML CGPA 9.14 / 10) and now work on
-          <strong>credit fraud</strong> at <strong>PayPal Research</strong>, alongside
-          collaborations with <strong>Microsoft Research</strong> and
-          <strong>US universities</strong> on deployable, real-world AI systems.
-        </p>
-      </div>
-    </section>
+        <div class="card">
+          <p>
+            I work on building reliable AI systems that can reason under constraints, respect privacy and operate in real deployments. My recent work explores
+            <strong>RL guided alignment</strong>, <strong>LLM unlearning and privacy</strong>, <strong>clinical NLP under tight resource limits</strong> and <strong>multimodal forecasting</strong>.
+          </p>
+          <p style="margin-top:6px;">
+            I completed my <strong>B.Tech in Electronics and Communication Engineering</strong> at <strong>IIIT Hyderabad</strong> (CGPA 8.29 out of 10, ML CGPA 9.14 out of 10). I have since worked with <strong>TCS Research</strong>, <strong>PayPal Research</strong>, <strong>Microsoft Research India</strong> and collaborators at <strong>UCSB</strong> and <strong>UCSC</strong>. A common theme in my work is using post training methods, constrained objectives and careful evaluation to move models from fluent text generation toward consistent, verifiable reasoning.
+          </p>
+        </div>
+      </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="section-header">
+      <!-- RESEARCH FOCUS -->
+      <section id="focus">
+        <h2 class="section-title">Research Focus</h2>
+        <div class="card">
+          <div class="highlight">
+            I am interested in how RL style optimization, structured feedback and learning science can guide large language models toward stable reasoning behaviors instead of only optimizing for surface level fluency.
+          </div>
+          <p>
+            The limitations of current LLMs became clear to me while working with noisy fraud investigation notes at PayPal and anonymized data for unlearning at TCS Research. In both settings, fluent answers were not enough. The systems had to respect constraints around privacy, consistency and safety, and their behavior had to be measurable and improvable over time.
+          </p>
+          <p style="margin-top:6px;">
+            I now focus on questions such as:
+          </p>
+          <ul>
+            <li>How to frame alignment and unlearning as constrained RL problems where rewards explicitly balance privacy, utility and safety.</li>
+            <li>How to design reward functions and feedback signals that encourage correct multi step reasoning rather than only correct final answers.</li>
+            <li>How ideas from learning sciences and instructional design can inform the way we structure feedback, curricula and evaluation for models that support human learning.</li>
+          </ul>
+          <div class="pill-row">
+            <span class="pill">RL guided alignment</span>
+            <span class="pill">Constrained optimization</span>
+            <span class="pill">LLM unlearning</span>
+            <span class="pill">Reasoning under resource limits</span>
+            <span class="pill">Educational technology</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience">
         <h2 class="section-title">Experience</h2>
-        <p class="section-subtitle">Industry, research labs, and internships</p>
-      </div>
-      <div class="grid-2">
-        <!-- Left column: main roles -->
         <div class="card">
-          <div class="card-header-row">
-            <div>
-              <div class="card-title">Machine Learning Engineer – Credit Fraud</div>
-              <div class="card-meta">PayPal Research · Bangalore · Jul 2025 – Present</div>
-            </div>
-          </div>
-          <div class="card-tags">
-            <span class="tag">LLM workflows</span>
-            <span class="tag">Fraud analytics</span>
-            <span class="tag">TabPFN</span>
+          <div class="item-header">
+            <div class="item-title">ML Research Scientist Intern - Fraud Analytics</div>
+            <div class="item-meta">PayPal Research, Bangalore · May 2024 - Aug 2024</div>
           </div>
           <ul>
             <li>
-              Built and productionized an <strong>LLM-driven workflow automation system</strong>
-              for fraud investigation, cutting manual review effort and increasing analyst
-              throughput.
+              Selected as the sole candidate from 436 applicants to work under <strong>Mahesh Balan</strong> on mining fraud signals from thousands of handwritten agent notes.
             </li>
             <li>
-              Developed a <strong>trend fingerprinting pipeline using TabPFN</strong> to detect
-              emerging fraud patterns, reaching <strong>99.7% accuracy</strong> and
-              <strong>100% recall</strong> on key benchmarks.
-            </li>
-          </ul>
-
-          <hr style="border-color: rgba(31,41,55,0.9); margin: 14px 0;" />
-
-          <div class="card-header-row">
-            <div>
-              <div class="card-title">ML Intern – Fraud Analytics</div>
-              <div class="card-meta">PayPal Research · Bangalore · May 2024 – Aug 2024</div>
-            </div>
-            <span class="hero-badge">Patent Filed</span>
-          </div>
-          <div class="card-tags">
-            <span class="tag">Summarization</span>
-            <span class="tag">Clustering</span>
-            <span class="tag">Custom metrics</span>
-          </div>
-          <ul>
-            <li>
-              Designed a <strong>summarization + clustering system</strong> for
-              <strong>millions of noisy investigator notes</strong>, improving fraud signal
-              extraction and analyst efficiency.
+              Fine tuned <strong>LLaMA with LoRA</strong>, designed a summarization and clustering pipeline and developed an embedding based evaluation metric that captured both precision and coverage of extracted signals.
             </li>
             <li>
-              Created a <strong>fraud-specialized text evaluation metric</strong> to measure
-              note completeness; this method was <strong>filed as a patent</strong> and
-              presented at PayPal’s internal ML conference in Singapore.
+              The metric has been filed for a <strong>patent</strong> and adopted across the fraud analytics team. I presented the work at <strong>PayPal's internal annual ML conference</strong> at the Singapore headquarters.
             </li>
           </ul>
         </div>
 
-        <!-- Right column: other roles -->
         <div class="card">
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-title">
-                Research Collaborator – Solar Forecasting & Foundation Models
-              </div>
-              <div class="timeline-meta">
-                Microsoft Research India & PreCog, IIIT Hyderabad · Sep 2024 – Sep 2025
-              </div>
-              <div class="timeline-desc">
-                Co-developed <strong>SPIRIT</strong>, a <strong>zero-shot solar irradiance
-                forecasting model</strong> that fuses sky-camera vision signals with
-                physics-based features, improving cross-location generalization by
-                <strong>~70%</strong> and cutting historical data needs from
-                <strong>~10 years to 1 year</strong>.
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-title">Research Intern – Privacy & LLM Unlearning</div>
-              <div class="timeline-meta">TCS Research · May 2025 – Jul 2025</div>
-              <div class="timeline-desc">
-                Developed <strong>verifiable LLM unlearning techniques</strong> for selective
-                forgetting while retaining model utility, and designed
-                <strong>policy-driven anonymization frameworks</strong> with tight privacy
-                guarantees.
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-title">
-                Project Intern – Sustainable AI Systems & Observability
-              </div>
-              <div class="timeline-meta">SERC, IIIT Hyderabad · Jan 2024 – Dec 2024</div>
-              <div class="timeline-desc">
-                Built <strong>Sustain Meter</strong>, a real-time observability platform to track
-                <strong>CO₂ emissions</strong> and hardware activity for AI training, using a
-                reliable client–server pipeline and <strong>Elasticsearch-based analytics</strong>.
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-title">
-                Research Intern – Clinical NLP & Small LMs (Targeting ACL’26)
-              </div>
-              <div class="timeline-meta">
-                UCSB & UCSC (DataUnite) · Jul 2025 – Present
-              </div>
-              <div class="timeline-desc">
-                Working on extracting <strong>patient status indicators</strong> from implicit
-                clinical notes using a <strong>compact (&lt; 1 GB) small-LM pipeline</strong> for
-                reasoning under tight compute constraints.
-              </div>
-            </div>
+          <div class="item-header">
+            <div class="item-title">Research Intern - Privacy and LLM Unlearning</div>
+            <div class="item-meta">TCS Research, Hyderabad · 2025</div>
           </div>
+          <ul>
+            <li>
+              Worked on <strong>privacy protected unlearning</strong> where the model must forget sensitive information while only seeing anonymized samples.
+            </li>
+            <li>
+              Reframed unlearning as a <strong>constrained RL problem</strong>, designing reward functions that penalize retention of private information while rewarding accuracy on downstream validation distributions.
+            </li>
+            <li>
+              Built production ready components that retained <strong>87 percent of downstream performance after unlearning</strong> while providing certifiable privacy guarantees.
+            </li>
+          </ul>
         </div>
-      </div>
-    </section>
 
-    <!-- RESEARCH -->
-    <section id="research">
-      <div class="section-header">
+        <div class="card">
+          <div class="item-header">
+            <div class="item-title">Research Intern - Clinical NLP and Small LMs</div>
+            <div class="item-meta">DataUnite, UCSB & UCSC · 2025 - present</div>
+          </div>
+          <ul>
+            <li>
+              Collaborate with <strong>Prof. Trinabh Gupta</strong> and <strong>Prof. Ishtiyaque Ahmed</strong> on inferring patient status from unstructured clinical notes where key information is implied rather than explicit.
+            </li>
+            <li>
+              Developed a high precision model that operates under strict deployment limits of <strong>sub 1 GB capacity and no GPU access</strong>, reflecting realistic healthcare infrastructure constraints.
+            </li>
+            <li>
+              The work outperforms existing baselines and is being prepared for <strong>ACL 2026</strong>, highlighting that carefully designed features and domain informed modeling can compensate for limited supervision and resources.
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="item-header">
+            <div class="item-title">Undergraduate Researcher - SPIRIT Project</div>
+            <div class="item-meta">PreCog Lab, IIIT Hyderabad & MSR Energy · 2023 - 2025</div>
+          </div>
+          <ul>
+            <li>
+              Worked with <strong>Prof. Ponnurangam Kumaraguru</strong> and <strong>Dr. Srinivasan Iyengar</strong> on <strong>SPIRIT</strong>, a multimodal solar irradiance forecasting framework that combines a frozen Vision Transformer with physics inspired features.
+            </li>
+            <li>
+              Led model pipeline design, ablation studies and evaluation, showing up to <strong>70 percent better zero shot performance</strong> over strong baselines.
+            </li>
+            <li>
+              The work was accepted as an <strong>Oral presentation at AAAI 2026 (AI4ES)</strong>, and the framework has been open sourced and externally cited.
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="item-header">
+            <div class="item-title">Project Intern - SustainMeter</div>
+            <div class="item-meta">IIIT Hyderabad · 2022 - 2023</div>
+          </div>
+          <ul>
+            <li>
+              Built <strong>SustainMeter</strong>, a real time observability platform for tracking the resource footprint of AI systems, including energy consumption and latency characteristics.
+            </li>
+            <li>
+              Designed telemetry and analytics pipelines that clarified trade offs between efficiency and performance in deployed ML workloads, grounding my understanding of large scale system behavior.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- RESEARCH -->
+      <section id="research">
         <h2 class="section-title">Research</h2>
-        <p class="section-subtitle">Publications & directions</p>
-      </div>
-      <div class="card">
-        <div class="card-header-row">
-          <div>
-            <div class="card-title">
-              SPIRIT: Short-term Prediction of solar IRradIance for zero-shot Transfer learning
-              using Foundation Models
-            </div>
-            <div class="card-meta">First Author · AAAI 2026 (Oral), AI4ES Workshop</div>
+        <div class="card">
+          <div class="item-header">
+            <div class="item-title">SPIRIT - Short term Prediction of solar IRradIance for zero shot Transfer using foundation models</div>
+            <div class="item-meta">First author · AAAI 2026 (AI4ES Oral)</div>
           </div>
+          <ul>
+            <li>
+              Proposed a framework that fuses <strong>vision foundation models</strong> with <strong>physics driven features</strong> to forecast solar irradiance across locations.
+            </li>
+            <li>
+              Demonstrated strong zero shot transfer and significantly reduced historical data requirements for new sites.
+            </li>
+          </ul>
         </div>
-        <div class="card-tags">
-          <span class="tag">Foundation models</span>
-          <span class="tag">Multimodal forecasting</span>
-          <span class="tag">Zero-shot transfer</span>
-        </div>
-        <ul>
-          <li>
-            Proposed <strong>SPIRIT</strong>, a framework combining
-            <strong>vision foundation models</strong> with <strong>physics-driven features</strong>
-            for short-term solar irradiance forecasting across locations.
-          </li>
-          <li>
-            Demonstrated strong <strong>zero-shot transfer</strong>, outperforming
-            site-specific baselines while drastically reducing historical data requirements.
-          </li>
-        </ul>
-      </div>
-    </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-header">
+        <div class="card">
+          <p>
+            My ongoing research interests sit at the intersection of <strong>RL guided alignment</strong>, <strong>LLM unlearning and safety</strong>, <strong>compact clinical reasoning models</strong> and <strong>learning centric AI systems</strong>. I am especially interested in how ideas from evidence based educational design can help structure model feedback, curricula and evaluation when AI systems are used to support human learning.
+          </p>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
         <h2 class="section-title">Selected Projects</h2>
-        <p class="section-subtitle">A snapshot of what I like building</p>
-      </div>
-      <div class="grid-2">
-        <div class="card">
-          <div class="card-header-row">
-            <div>
-              <div class="card-title">Wiki Search Engine – Large-scale IR</div>
-              <div class="card-meta">Python · PyTorch · NLTK · SpaCy</div>
+        <div class="two-col">
+          <div class="card">
+            <div class="item-header">
+              <div class="item-title">Wiki Search Engine</div>
+              <div class="item-meta">Information retrieval · systems</div>
             </div>
+            <ul>
+              <li>
+                Implemented a search engine over a <strong>64 GB Wikipedia dump</strong> with sparse indexing and TF IDF based ranking.
+              </li>
+              <li>
+                Achieved sub 1.4 second query latency and a <strong>MAP of 0.91</strong> on benchmark queries.
+              </li>
+            </ul>
           </div>
-          <div class="card-tags">
-            <span class="tag">Information Retrieval</span>
-            <span class="tag">TF-IDF</span>
-            <span class="tag">Systems</span>
+
+          <div class="card">
+            <div class="item-header">
+              <div class="item-title">No Strings Attached - Debiasing knowledge graph embeddings</div>
+              <div class="item-meta">Fairness · KGE</div>
+            </div>
+            <ul>
+              <li>
+                Developed a multi objective framework to suppress gender bias in profession prediction while preserving relational structure in embeddings.
+              </li>
+              <li>
+                On FB15k 237, reduced measured gender bias by about <strong>56 percent</strong> with no significant loss in link prediction performance.
+              </li>
+            </ul>
           </div>
+        </div>
+      </section>
+
+      <!-- TEACHING & SERVICE -->
+      <section id="teaching">
+        <h2 class="section-title">Teaching & Service</h2>
+        <div class="two-col">
+          <div class="card">
+            <div class="item-header">
+              <div class="item-title">Teaching Assistant - Machine Learning</div>
+              <div class="item-meta">IIIT Hyderabad</div>
+            </div>
+            <ul>
+              <li>
+                Served as a TA for the undergraduate Machine Learning course across two semesters.
+              </li>
+              <li>
+                Organized review sessions and led workshops on <strong>LLM training and alignment techniques</strong>, translating research ideas into accessible material for students.
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="item-header">
+              <div class="item-title">Student roles and community work</div>
+            </div>
+            <ul>
+              <li>
+                Contributed to the Entrepreneurship Cell, helping organize events that encouraged students to explore venture ideas.
+              </li>
+              <li>
+                Supported the student induction committee in guiding new students to explore activities, take leadership roles and settle into campus life.
+              </li>
+              <li>
+                Intend to continue similar work by contributing to student support and diversity efforts in future institutions.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS -->
+      <section id="achievements">
+        <h2 class="section-title">Achievements</h2>
+        <div class="card">
           <ul>
             <li>
-              Implemented a search engine over a <strong>64 GB Wikipedia dump</strong> with
-              efficient sparse indexing and <strong>TF–IDF-based ranking</strong>.
+              <strong>JEE Main</strong>: 99.9 percentile score, leading to admission at IIIT Hyderabad, one of India's most selective research institutes.
             </li>
             <li>
-              Achieved <strong>&lt; 1.4 s query latency</strong> with high semantic relevance
-              and a <strong>MAP of 0.91</strong> on benchmark queries.
+              Multiple distinctions on the <strong>Dean's Merit List</strong> for consistent academic performance.
+            </li>
+            <li>
+              <strong>Qualcomm Megathon 2023</strong>: Led a real time medical QA system that finished first among more than 5,000 participants.
+            </li>
+            <li>
+              <strong>Amazon ML Challenge 2024</strong>: Hybrid vision OCR pipeline that ranked in the top 25 out of nearly 18,000 teams.
             </li>
           </ul>
         </div>
+      </section>
 
-        <div class="card">
-          <div class="card-header-row">
-            <div>
-              <div class="card-title">No Strings Attached – Debiasing KG Embeddings</div>
-              <div class="card-meta">PyTorch · KGE · Fairness</div>
-            </div>
-          </div>
-          <div class="card-tags">
-            <span class="tag">Knowledge Graphs</span>
-            <span class="tag">TransE</span>
-            <span class="tag">Debiasing</span>
-          </div>
-          <ul>
-            <li>
-              Proposed a <strong>multi-objective debiasing framework</strong> for knowledge graph
-              embeddings to suppress gender bias in profession prediction.
-            </li>
-            <li>
-              On <strong>FB15k-237</strong>, reduced measured gender bias by
-              <strong>56%</strong> without hurting link prediction performance
-              (<strong>MRR</strong>, <strong>Hits@10</strong>).
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- LEADERSHIP -->
-    <section id="leadership">
-      <div class="section-header">
-        <h2 class="section-title">Leadership & Teaching</h2>
-      </div>
-      <div class="grid-2">
-        <div class="card">
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-title">Treasurer, Student Parliament</div>
-              <div class="timeline-meta">IIIT Hyderabad</div>
-              <div class="timeline-desc">
-                Managed <strong>multi-lakh budgets</strong>, enforced financial discipline across
-                student clubs, and ensured transparent fund allocation.
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-title">Student Placement Coordinator</div>
-              <div class="timeline-meta">IIIT Hyderabad</div>
-              <div class="timeline-desc">
-                Coordinated campus hiring with <strong>40+ companies</strong>, balancing
-                recruitment timelines with academic schedules.
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-title">Sports Secretary</div>
-              <div class="timeline-meta">IIIT Hyderabad</div>
-              <div class="timeline-desc">
-                Oversaw all campus sports activities and inter-college events, including resource
-                allocation and infrastructure planning.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-title">Logistics Head, Entrepreneurship Cell</div>
-              <div class="timeline-meta">IIIT Hyderabad</div>
-              <div class="timeline-desc">
-                Led logistics for institute hackathons and startup events; launched the
-                <strong>“Fail?” talk series</strong> to normalize discussing failure in
-                entrepreneurship.
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-title">Teaching Assistant – Machine Learning</div>
-              <div class="timeline-meta">IIIT Hyderabad</div>
-              <div class="timeline-desc">
-                Supported large ML cohorts with assignment design, project mentoring, and
-                1-on-1 guidance, helping students connect theory and implementation.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION & ACHIEVEMENTS -->
-    <section id="education">
-      <div class="section-header">
-        <h2 class="section-title">Education & Achievements</h2>
-      </div>
-      <div class="grid-2">
-        <div class="card">
-          <div class="card-header-row">
-            <div>
-              <div class="card-title">B.Tech, Electronics and Communication Engineering</div>
-              <div class="card-meta">IIIT Hyderabad · 2021 – 2025</div>
-            </div>
-          </div>
-          <p style="font-size: 0.86rem; margin-top: 4px;">
-            <strong>CGPA:</strong> 8.29 / 10 &nbsp;·&nbsp;
-            <strong>ML CGPA:</strong> 9.14 / 10
-          </p>
-          <p style="font-size: 0.86rem; margin-top: 6px; color: var(--muted);">
-            Relevant coursework:
-          </p>
-          <div class="pill-list" style="margin-top: 8px;">
-            <span class="pill-soft">Computer Programming</span>
-            <span class="pill-soft">Data Structures & Algorithms</span>
-            <span class="pill-soft">Probability & Statistics</span>
-            <span class="pill-soft">Machine Learning (SMAI)</span>
-            <span class="pill-soft">Advanced NLP</span>
-            <span class="pill-soft">Digital Image Processing</span>
-            <span class="pill-soft">Responsible AI Systems</span>
-            <span class="pill-soft">Speech Signal Processing</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3 style="font-size: 0.95rem; margin-bottom: 8px;">Highlights</h3>
-          <ul style="font-size: 0.86rem;">
-            <li>
-              <strong>Patent Filed</strong> – Fraud-focused text evaluation metric at PayPal
-              Research.
-            </li>
-            <li>
-              <strong>Amazon ML Challenge 2024</strong> – Rank 25 / 70,000 (Top 0.03%) using a
-              hybrid vision–OCR pipeline.
-            </li>
-            <li>
-              <strong>Megathon 2023 – Winner</strong> – Real-time medical QA with quantized LLMs
-              and RAG; 1st place among 5000+ participants.
-            </li>
-            <li>
-              <strong>Dean’s Merit List</strong> – Top 5% of batch in 3 out of 8 semesters.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-header">
+      <!-- CONTACT -->
+      <section id="contact">
         <h2 class="section-title">Contact</h2>
-      </div>
-      <div class="card contact-card">
-        <div class="contact-details">
-          <span>Email</span>
-          <strong><a href="mailto:suryaravindra01@gmail.com">suryaravindra01@gmail.com</a></strong>
-          <span style="margin-top: 6px;">Phone</span>
-          <strong><a href="tel:+919676030056">+91-9676030056</a></strong>
+        <div class="card contact-list">
+          <span><strong>Email:</strong> <a href="mailto:suryaravindra01@gmail.com">suryaravindra01@gmail.com</a></span>
+          <span><strong>GitHub:</strong> <a href="https://github.com/surya-ravindra06" target="_blank">github.com/surya-ravindra06</a></span>
+          <!-- Replace the LinkedIn URL with your real profile -->
+          <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ravindra-telidevara/" target="_blank">linkedin.com/in/your-linkedin</a></span>
         </div>
-        <div class="contact-details">
-          <span>Profiles</span>
-          <!-- Replace with your actual URLs -->
-          <strong>
-            <a href="https://github.com/surya-ravindra06/" target="_blank">GitHub</a> ·
-            <a href="https://www.linkedin.com/in/ravindra-telidevara/" target="_blank">LinkedIn</a>
-          </strong>
-        </div>
-        <a href="#top" class="btn-ghost">Back to top ↑</a>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <footer>
-      &copy; <span id="year"></span> T Ravindra. Built with a love for clean, deployed ML.
+      &copy; <span id="year"></span> Ravindra Telidevara. Built around RL guided alignment, reasoning and learning centric AI.
     </footer>
-  </main>
+  </div>
 
   <script>
-    // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
